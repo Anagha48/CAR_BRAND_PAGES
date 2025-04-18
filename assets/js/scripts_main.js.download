@@ -1,0 +1,63 @@
+window.onscroll = function() { scrollFunction() };
+var a = document.querySelector(".hamburger-menu");
+var m = document.querySelector(".hamburger");
+
+function scrollFunction() {
+    if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+        document.querySelector(".navstyle").style.borderBottom = "#e0e0e0 SOLID 1px";
+        document.querySelector(".navstyle").style.background = "#fff";
+        document.querySelector(".navstyle .navbar-brand").style.transform = "translate(-50%, 0px)";
+        document.querySelector(".navstyle .navbar-brand #logo").style.width = "130px";
+    } else {
+        document.querySelector(".navstyle").style.borderBottom = "none";
+        document.querySelector(".navstyle").style.background = "none";
+        document.querySelector(".navstyle .navbar-brand").style.transform = "translate(-50%, 65px)";
+        document.querySelector(".navstyle .navbar-brand #logo").style.width = "160px";
+    }
+}
+
+window.onscroll = function() { scrollFunction() };
+
+function scrollFunction() {
+    if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+        document.querySelector(".navstyle").style.borderBottom = "#e0e0e0 SOLID 1px";
+        document.querySelector(".navstyle").style.background = "#fff";
+        document.querySelector(".navstyle .navbar-brand").style.transform = "translate(-50%, 0px)";
+        document.querySelector(".navstyle .navbar-brand #logo").style.width = "130px";
+    } else {
+        document.querySelector(".navstyle").style.borderBottom = "none";
+        document.querySelector(".navstyle").style.background = "none";
+        document.querySelector(".navstyle .navbar-brand").style.transform = "translate(-50%, 65px)";
+        document.querySelector(".navstyle .navbar-brand #logo").style.width = "160px";
+    }
+}
+
+m.addEventListener("click", () => {
+    a.classList.toggle("change");
+
+});
+$(function() {
+    $('.scroll1').infiniteslide({
+        speed: 120
+    });
+
+});
+
+if($('#nav-tab').length != 0) {
+    $(document).ready(function() {
+      var triggerTabList = [].slice.call(document.querySelectorAll('#nav-tab a'))
+      triggerTabList.forEach(function(triggerEl) {
+          var tabTrigger = new bootstrap.Tab(triggerEl)
+
+          triggerEl.addEventListener('click', function(event) {
+              event.preventDefault()
+              tabTrigger.show()
+          })
+      })
+        $(".dropdown-menu a").click(function() {
+            var parent = $(this).parents(".dropdown").find('.dropdown-toggle');
+            parent.html($(this).text() + ' <span class="caret"></span>');
+        });
+
+    });
+}
